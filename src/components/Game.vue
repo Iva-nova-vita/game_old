@@ -67,7 +67,7 @@ this.imagesArr.sort();
 #playing_field {
   height: 97vh;
   text-align: center;
-  background: url(../assets/bgrnd.jpg);
+  background: url(../assets/images/bgrnd.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 

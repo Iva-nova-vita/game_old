@@ -1,7 +1,6 @@
 <template>
-  <div class="images" > 
-    <!--  <img :src="`./static/${lettersArr[index]}.jpeg`" alt=""> -->
-    <img :src="require(`../assets/${letter}.jpeg`)" v-on:click="check($event, index)" >
+  <div class="images" >
+    <img :src="letterImgPath" v-on:click="check($event, index)" >
   </div>
 </template>
 
@@ -24,6 +23,9 @@ export default {
   computed: {
     letter() {
       return this.letters[this.index];
+    },
+    letterImgPath() {
+      return require(`../assets//images/letters/${this.letter}.jpeg`);
     },
   }
 }
