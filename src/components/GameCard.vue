@@ -8,8 +8,8 @@
 <script>
 export default {
   props: {
-    letter: {
-      type: String,
+    letters: {
+      type: Array,
       required: true,
     },
     index: {
@@ -20,6 +20,11 @@ export default {
       type: Function,
       required: true,
     }
+  },
+  computed: {
+    letter() {
+      return this.letters[this.index];
+    },
   }
 }
 </script>

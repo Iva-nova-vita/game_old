@@ -5,7 +5,7 @@
     <div class="flex_container">
      
       <card v-for="i in 3" :key="i"
-       :letter="lettersArr[imagesArr[i-1]]" :index="imagesArr[i-1]" :check="check"
+       :letters="lettersArr" :index="imagesArr[i-1]" :check="check"
       />
 
     </div>
