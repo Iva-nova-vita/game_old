@@ -34,11 +34,11 @@ export default {
   },
   
 methods: {
-  check(e) {
+  check(e, index) {
       console.log(e);
-    if (this.index==e.target.attributes[1].value) {
-this.changeLetter();
-    } else return;
+      if (this.index == index) {
+        this.changeLetter();
+      }
   },
 changeLetter() {
   if (this.index<29) {

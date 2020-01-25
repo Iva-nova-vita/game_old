@@ -1,7 +1,7 @@
 <template>
   <div class="images" > 
     <!--  <img :src="`./static/${lettersArr[index]}.jpeg`" alt=""> -->
-    <img :src="require(`../assets/${letter}.jpeg`)" :indexOfArr="index" v-on:click="check" >
+    <img :src="require(`../assets/${letter}.jpeg`)" v-on:click="check($event, index)" >
   </div>
 </template>
 
