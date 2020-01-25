@@ -4,28 +4,24 @@
     <div id="letter">{{lettersArr[index]}}</div>
     <div class="flex_container">
      
-      <div class="images" >
-         
-        <!--  <img :src="`./static/${lettersArr[index]}.jpeg`" alt=""> -->
-        <img :src="require(`../assets/${lettersArr[imagesArr[0]]}.jpeg`)" :indexOfArr="`${imagesArr[0]}`" v-on:click="check" >
-      </div>
-      <div class="images" >
-          <img :src="require(`../assets/${lettersArr[imagesArr[1]]}.jpeg`)" :indexOfArr="`${imagesArr[1]}`" v-on:click="check">
+      <card v-for="i in 3" :key="i"
+       :letter="lettersArr[imagesArr[i-1]]" :index="imagesArr[i-1]" :check="check"
+      />
 
-      </div>
-      <div class="images">
-<img :src="require(`../assets/${lettersArr[imagesArr[2]]}.jpeg`)" :indexOfArr="`${imagesArr[2]}`"  v-on:click="check">
-      </div>
     </div>
   </div>
 </template>
 <script>
+import Card from "@/components/GameCard"
+
 export default {
   props: {
     indexOfArr: {
       type: Number,
     },
-    
+  },
+  components: {
+    card: Card,
   },
   data() {
     return {
