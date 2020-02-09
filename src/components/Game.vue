@@ -37,7 +37,12 @@ methods: {
   check(e, index) {
       console.log(e);
       if (this.index == index) {
-        this.changeLetter();
+e.target.classList.add('animateTrue')
+        setTimeout(this.changeLetter, 1000);
+        setTimeout(() => e.target.classList.remove('animateTrue'), 1000);
+      } else {
+        e.target.classList.add('animateFalse')
+        setTimeout(() => e.target.classList.remove('animateFalse'), 1000);
       }
   },
 changeLetter() {
@@ -81,17 +86,12 @@ this.imagesArr.sort();
 }
 
 #letter {
-  // height: 150px;
-  // width: 150px;
-  // border: 5px brown solid;
-  // border-radius: 100%;
   color: red;
   margin: 0 auto;
   font-family: "Times New Roman", Times, serif;
   font-size: 126px;
-
   text-transform: uppercase;
-  //background: url(../assets/sky.jpeg);
+
 }
 .flex_container {
   display: flex;
@@ -100,14 +100,47 @@ this.imagesArr.sort();
   margin-top: 20px;
 }
 .images {
-  height: 250px;
-  width: 250px;
-  border: 5px brown solid;
-  color: red;
+  height: 270px;
+  width: 270px;
   margin: 0 auto;
   img {
       width: 250px;
       height: 250px;
+      border: 7px rgb(150, 93, 86) solid;
+      border-radius: 15px;
+  }
+}
+
+.animateTrue {
+  animation: animBorderTrue 0.2s linear infinite;
+}
+@keyframes animBorderTrue {
+  0% {
+    border-color: rgb(47, 201, 68);
+
+  }
+  50% {
+    border-color: rgb(156, 231, 173) ;
+    
+  }
+  100% {
+    border-color: rgb(47, 201, 68);
+   
+  }
+}
+
+.animateFalse {
+  animation: animBorderFalse 0.2s linear infinite;
+}
+@keyframes animBorderFalse{
+  0% {
+    border-color: rgb(240, 36, 9);
+  }
+  50% {
+    border-color: rgb(238, 160, 160) ;
+  }
+  100% {
+    border-color: rgb(240, 36, 9);
   }
 }
 </style>
